@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player_with_obj.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/T_PurpleBackground_Version1_Layer1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/3D/Background/Background.glb" type="PackedScene" id=3]
 
 [sub_resource type="CylinderShape" id=1]
 radius = 10.0
@@ -38,8 +39,17 @@ spot_range = 32.8114
 
 [node name="BG" type="Sprite3D" parent="."]
 transform = Transform( -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0, 1, 0, 12.8716, -31.5262 )
+visible = false
 texture = ExtResource( 2 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+
+[node name="Background" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -2.5, 0, 1, 0, 1, 0, -1.09278e-07, -2.27315, 0.0564575, -21.5216 )
+
+[node name="Background2" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 2.5, 0, 1, 0, 1, 0, 1.09278e-07, -2.27315, 0.0564575, -21.5216 )
