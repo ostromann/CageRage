@@ -12,6 +12,8 @@ const UP = Vector3.UP
 var direction = Vector3.ZERO
 var velocity = Vector3.ZERO
 var jump_charge = 0
+var is_charging = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,6 +33,7 @@ func _physics_process(delta):
 	jump(delta)
 	var _move = move_and_slide(velocity,UP)
 	move_and_slide(velocity, UP)
+	animate()
 	$Label.text = 'is_on_floor: ' +str(is_on_floor())
 	
 func apply_gravity(delta):
@@ -42,8 +45,10 @@ func apply_gravity(delta):
 	
 func jump(delta):
 	if Input.is_action_pressed("jump"):
+		is_charging = true
 		jump_charge += JUMP_CHARGE_FACTOR * delta
 	elif Input.is_action_just_released("jump"):
+		is_charging = false
 		translation.y = 0.1
 		velocity.y += MAX_JUMP_SPEED * clamp(jump_charge,0,1.0)
 		# Get the jump direction
@@ -61,3 +66,7 @@ func update_velocity(direction, delta):
 		velocity.x = 0
 	else:
 		velocity.x = direction.x * LATERAL_SPEED * delta
+		
+func animate():
+	if is_charging:
+		$AnimationPlayer.play("charging")

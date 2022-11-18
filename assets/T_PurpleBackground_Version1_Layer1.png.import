@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/T_PurpleBackground_Version1_Layer1.png-2e8629e7ef8daaa53fcd11b284a42b10.s3tc.stex"
-path.etc2="res://.import/T_PurpleBackground_Version1_Layer1.png-2e8629e7ef8daaa53fcd11b284a42b10.etc2.stex"
+path.s3tc="res://.import/T_PurpleBackground_Version1_Layer1.png-c80062378858f8dc4c9a04fbd7d051c4.s3tc.stex"
+path.etc2="res://.import/T_PurpleBackground_Version1_Layer1.png-c80062378858f8dc4c9a04fbd7d051c4.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/T_PurpleBackground_Version1_Layer1.png"
-dest_files=[ "res://.import/T_PurpleBackground_Version1_Layer1.png-2e8629e7ef8daaa53fcd11b284a42b10.s3tc.stex", "res://.import/T_PurpleBackground_Version1_Layer1.png-2e8629e7ef8daaa53fcd11b284a42b10.etc2.stex" ]
+source_file="res://Assets/T_PurpleBackground_Version1_Layer1.png"
+dest_files=[ "res://.import/T_PurpleBackground_Version1_Layer1.png-c80062378858f8dc4c9a04fbd7d051c4.s3tc.stex", "res://.import/T_PurpleBackground_Version1_Layer1.png-c80062378858f8dc4c9a04fbd7d051c4.etc2.stex" ]
 
 [params]
 
