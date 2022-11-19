@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/SFX/crowd_cheer_short.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Assets/SFX/crowd_boo.wav" type="AudioStream" id=2]
 [ext_resource path="res://Assets/SFX/fanfare.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Assets/SFX/crowd_laughter.wav" type="AudioStream" id=4]
 [ext_resource path="res://Assets/3D/Background/Backgroundcolosseum.glb" type="PackedScene" id=5]
+[ext_resource path="res://Level/Neutral/Rope.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level/Goal.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Level/Level3D.gd" type="Script" id=11]
 [ext_resource path="res://Assets/3D/Background/Material.material" type="Material" id=12]
@@ -44,6 +45,8 @@ transform = Transform( -1.31134e-07, 0, -3, 0, 2, 0, 3, 0, -1.31134e-07, 0, -3.6
 [node name="Hazards" type="Node" parent="."]
 
 [node name="Neutral" type="Node" parent="."]
+
+[node name="Rope" parent="Neutral" instance=ExtResource( 6 )]
 
 [node name="Checkpoints" type="Node" parent="."]
 

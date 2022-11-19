@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/fanfare.wav-ea0bbefa7bb5eee50f772938adf7c177.sample"
+path="res://.import/fanfare.wav-7e7dcb382d23d8be862a2b37cec06263.sample"
 
 [deps]
 
-source_file="res://Assets/SFX/fanfare.wav"
-dest_files=[ "res://.import/fanfare.wav-ea0bbefa7bb5eee50f772938adf7c177.sample" ]
+source_file="res://assets/SFX/fanfare.wav"
+dest_files=[ "res://.import/fanfare.wav-7e7dcb382d23d8be862a2b37cec06263.sample" ]
 
 [params]
 

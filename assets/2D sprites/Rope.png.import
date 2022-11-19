@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/T_PurpleBackground_Version1_Layer1.png-2e8629e7ef8daaa53fcd11b284a42b10.s3tc.stex"
-path.etc2="res://.import/T_PurpleBackground_Version1_Layer1.png-2e8629e7ef8daaa53fcd11b284a42b10.etc2.stex"
+path.s3tc="res://.import/Rope.png-b5072827d5e83382d4cfd2e609b95866.s3tc.stex"
+path.etc2="res://.import/Rope.png-b5072827d5e83382d4cfd2e609b95866.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/T_PurpleBackground_Version1_Layer1.png"
-dest_files=[ "res://.import/T_PurpleBackground_Version1_Layer1.png-2e8629e7ef8daaa53fcd11b284a42b10.s3tc.stex", "res://.import/T_PurpleBackground_Version1_Layer1.png-2e8629e7ef8daaa53fcd11b284a42b10.etc2.stex" ]
+source_file="res://assets/2D sprites/Rope.png"
+dest_files=[ "res://.import/Rope.png-b5072827d5e83382d4cfd2e609b95866.s3tc.stex", "res://.import/Rope.png-b5072827d5e83382d4cfd2e609b95866.etc2.stex" ]
 
 [params]
 
@@ -22,7 +22,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
-flags/filter=true
+flags/filter=false
 flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=1
