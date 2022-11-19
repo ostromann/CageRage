@@ -2,12 +2,12 @@
 
 importer="ogg_vorbis"
 type="AudioStreamOGGVorbis"
-path="res://.import/crowd_cheer.ogg-b66a8a6bdbcd8e82a9d8b4b340c8e695.oggstr"
+path="res://.import/crowd_cheer.ogg-00bc7e1d94a3b4cca843192c7be652df.oggstr"
 
 [deps]
 
-source_file="res://assets/SFX/crowd_cheer.ogg"
-dest_files=[ "res://.import/crowd_cheer.ogg-b66a8a6bdbcd8e82a9d8b4b340c8e695.oggstr" ]
+source_file="res://Assets/SFX/crowd_cheer.ogg"
+dest_files=[ "res://.import/crowd_cheer.ogg-00bc7e1d94a3b4cca843192c7be652df.oggstr" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/crowd3.png-59f7096a50dd949bd35f3867cf0b2bbf.stex"
+path="res://.import/crowd3.png-6be3efe054a2d3c30d4077c53f08a06f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2D sprites/crowd3.png"
-dest_files=[ "res://.import/crowd3.png-59f7096a50dd949bd35f3867cf0b2bbf.stex" ]
+source_file="res://Assets/2D sprites/crowd3.png"
+dest_files=[ "res://.import/crowd3.png-6be3efe054a2d3c30d4077c53f08a06f.stex" ]
 
 [params]
 
@@ -23,7 +23,7 @@ flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
-flags/srgb=2
+flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

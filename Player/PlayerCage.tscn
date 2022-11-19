@@ -115,9 +115,14 @@ axis_lock_angular_y = true
 shape = SubResource( 1 )
 
 [node name="Cage1" type="MeshInstance" parent="Bottom"]
-transform = Transform( 0.7, 0, 0, 0, 0.6, 0, 0, 0, 0.7, 0, -0.100773, 0 )
+transform = Transform( 0.7, 0, 0, 0, 0.65, 0, 0, 0, 0.7, 0, -0.100773, 0 )
 mesh = SubResource( 3 )
 skeleton = NodePath("../..")
+
+[node name="Cage2" type="MeshInstance" parent="Bottom"]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.000349794, 1.73081, -0.00193289 )
+mesh = SubResource( 10 )
+skeleton = NodePath("../Cage1")
 
 [node name="Top" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0 )
@@ -131,11 +136,6 @@ axis_lock_angular_y = true
 
 [node name="CollisionShape" type="CollisionShape" parent="Top"]
 shape = SubResource( 1 )
-
-[node name="Cage2" type="MeshInstance" parent="Top"]
-transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.000349794, -0.0691928, -0.00193289 )
-mesh = SubResource( 10 )
-skeleton = NodePath("../../Bottom/Cage1")
 
 [node name="Right" type="RigidBody" parent="."]
 transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -0.9, 0, 0 )
@@ -204,12 +204,3 @@ nodes/node_a = NodePath("../Bottom")
 nodes/node_b = NodePath("../Diagonal")
 params/bias = 0.99
 params/damping = 1.5
-
-[connection signal="body_entered" from="Bottom" to="." method="_on_Bottom_body_entered"]
-[connection signal="body_exited" from="Bottom" to="." method="_on_Bottom_body_exited"]
-[connection signal="body_entered" from="Top" to="." method="_on_Top_body_entered"]
-[connection signal="body_exited" from="Top" to="." method="_on_Top_body_exited"]
-[connection signal="body_entered" from="Right" to="." method="_on_Right_body_entered"]
-[connection signal="body_exited" from="Right" to="." method="_on_Right_body_exited"]
-[connection signal="body_entered" from="Left" to="." method="_on_Left_body_entered"]
-[connection signal="body_exited" from="Left" to="." method="_on_Left_body_exited"]

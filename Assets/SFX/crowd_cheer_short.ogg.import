@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/crowd_cheer_short.ogg-51f7d2fb43a729cfd4f35773f0b79c39.oggstr"
+
+[deps]
+
+source_file="res://Assets/SFX/crowd_cheer_short.ogg"
+dest_files=[ "res://.import/crowd_cheer_short.ogg-51f7d2fb43a729cfd4f35773f0b79c39.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

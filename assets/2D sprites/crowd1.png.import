@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/crowd1.png-54673042e8c5a5e339fcf43bc796976e.stex"
+path="res://.import/crowd1.png-7af6d2d9b97b60f45ef8da97919e77e2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2D sprites/crowd1.png"
-dest_files=[ "res://.import/crowd1.png-54673042e8c5a5e339fcf43bc796976e.stex" ]
+source_file="res://Assets/2D sprites/crowd1.png"
+dest_files=[ "res://.import/crowd1.png-7af6d2d9b97b60f45ef8da97919e77e2.stex" ]
 
 [params]
 

@@ -6,11 +6,13 @@
 [ext_resource path="res://Assets/SFX/Wilhelm_Scream.ogg" type="AudioStream" id=4]
 
 [node name="RigidPlayer" type="Spatial"]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
 script = ExtResource( 3 )
 
 [node name="PlayerCage" parent="." instance=ExtResource( 2 )]
 
 [node name="PlayerBall" parent="." instance=ExtResource( 1 )]
+MAX_JUMP_IMPULSE = 240
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5

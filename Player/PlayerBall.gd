@@ -1,8 +1,8 @@
 extends RigidBody
 
 
-export var MAX_JUMP_IMPULSE = 320
-export var LATERAL_FORCE = 4000
+export var MAX_JUMP_IMPULSE = 160
+export var LATERAL_FORCE = 2000
 #export var LATERAL_SPEED = 200
 export var JUMP_CHARGE_FACTOR = 2.0 # per second charges up to 1.0
 

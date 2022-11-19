@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Background.glb-d480c5cf8986a10b9d2c4a3d9d687761.scn"
+path="res://.import/Background.glb-33569ab70c299a7436f8e61f372af91e.scn"
 
 [deps]
 
-source_file="res://assets/3D/Background/Background.glb"
-dest_files=[ "res://.import/Background.glb-d480c5cf8986a10b9d2c4a3d9d687761.scn" ]
+source_file="res://Assets/3D/Background/Background.glb"
+dest_files=[ "res://.import/Background.glb-33569ab70c299a7436f8e61f372af91e.scn" ]
 
 [params]
 
