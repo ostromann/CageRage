@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Prisoner.glb-b1ed6237d7119c20ef057e771fdf6586.scn"
+path="res://.import/Prisoner.glb-59d862c74c7116bf62d99cbbe7211df8.scn"
 
 [deps]
 
-source_file="res://Assets/3D/Prisoner/Prisoner.glb"
-dest_files=[ "res://.import/Prisoner.glb-b1ed6237d7119c20ef057e771fdf6586.scn" ]
+source_file="res://assets/3D/Prisoner/Prisoner.glb"
+dest_files=[ "res://.import/Prisoner.glb-59d862c74c7116bf62d99cbbe7211df8.scn" ]
 
 [params]
 

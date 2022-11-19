@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/crowd_laughter.wav-3cd3f3488788de1d73bb067a24fa9306.sample"
+path="res://.import/crowd_laughter.wav-9262b5adc2ed9971723dba3238b34712.sample"
 
 [deps]
 
-source_file="res://Assets/SFX/crowd_laughter.wav"
-dest_files=[ "res://.import/crowd_laughter.wav-3cd3f3488788de1d73bb067a24fa9306.sample" ]
+source_file="res://assets/SFX/crowd_laughter.wav"
+dest_files=[ "res://.import/crowd_laughter.wav-9262b5adc2ed9971723dba3238b34712.sample" ]
 
 [params]
 

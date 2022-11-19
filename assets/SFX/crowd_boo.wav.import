@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/crowd_boo.wav-81121b31c00ebf8113ac8695472042ae.sample"
+path="res://.import/crowd_boo.wav-65329d3ca12f417d449787c7c4b3d67e.sample"
 
 [deps]
 
-source_file="res://Assets/SFX/crowd_boo.wav"
-dest_files=[ "res://.import/crowd_boo.wav-81121b31c00ebf8113ac8695472042ae.sample" ]
+source_file="res://assets/SFX/crowd_boo.wav"
+dest_files=[ "res://.import/crowd_boo.wav-65329d3ca12f417d449787c7c4b3d67e.sample" ]
 
 [params]
 

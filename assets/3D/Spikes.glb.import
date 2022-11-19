@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Background_flag_fixed.glb-42ab69d079fdc772706698c5b31314c3.scn"
+path="res://.import/Spikes.glb-07c0cac3bcf4c6fa80787992a6803dd9.scn"
 
 [deps]
 
-source_file="res://Assets/3D/Background/Background_flag_fixed.glb"
-dest_files=[ "res://.import/Background_flag_fixed.glb-42ab69d079fdc772706698c5b31314c3.scn" ]
+source_file="res://assets/3D/Spikes.glb"
+dest_files=[ "res://.import/Spikes.glb-07c0cac3bcf4c6fa80787992a6803dd9.scn" ]
 
 [params]
 

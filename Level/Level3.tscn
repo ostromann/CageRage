@@ -8,9 +8,6 @@
 [node name="Level3" instance=ExtResource( 1 )]
 next_level = "res://Level/Level4.tscn"
 
-[node name="Hazard" parent="Hazards" index="0" instance=ExtResource( 2 )]
-transform = Transform( 18, 0, 0, 0, 2, 0, 0, 0, 1, 8.02398, -0.085, 0 )
-
 [node name="Block" parent="Neutral" index="0" instance=ExtResource( 4 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -7.41578, 2, 0 )
 
@@ -46,3 +43,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.261, 4.8175, 0.0285683 )
 
 [node name="Goal" parent="." index="8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0036, 6.21085, 0.943188 )
+
+[node name="Hazard" parent="." index="12" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0.778658, 2.19096, 0.727782 )
+
+[node name="Hazard2" parent="." index="13" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 4.26521, 2.19096, 0.727782 )
+
+[node name="Hazard3" parent="." index="14" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 7.66681, 2.19096, 0.727782 )
+
+[node name="Hazard4" parent="." index="15" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15.7072, 2.19096, 0.727782 )
+
+[node name="Hazard5" parent="." index="16" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 19.1938, 2.19096, 0.727782 )
+
+[node name="Hazard6" parent="." index="17" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 22.5954, 2.19096, 0.727782 )
