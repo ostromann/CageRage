@@ -15,7 +15,6 @@ var jump_charge = 0.0
 var is_charging = false
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
@@ -40,7 +39,6 @@ func jump(delta):
 	elif Input.is_action_just_released("jump"):
 		is_charging = false
 		apply_central_impulse(Vector3.UP * jump_charge * MAX_JUMP_IMPULSE)
-		# Get the jump direction
 		jump_charge = 0
 	
 func get_direction():
@@ -51,13 +49,6 @@ func get_direction():
 func roll(delta):
 	add_central_force(Vector3.RIGHT * direction.x * delta * 2000)
 #
-#
-#func update_velocity(direction, delta):
-#	print(translation)
-#	if translation.y <= 2.001: #TODO: Figure out if we're on the ground
-#		velocity.x = 0
-#	else:
-#		velocity.x = direction.x * LATERAL_SPEED * delta
 #
 #func animate():
 #	# TODO: Figure this out

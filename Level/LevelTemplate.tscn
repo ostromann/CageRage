@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/SFX/crowd_cheer_short.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Assets/SFX/crowd_boo.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/SFX/fanfare.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Assets/SFX/crowd_laughter.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/3D/Background/Backgroundcolosseum.glb" type="PackedScene" id=5]
+[ext_resource path="res://Level/Goal.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Level/Level3D.gd" type="Script" id=11]
+[ext_resource path="res://Assets/3D/Background/Material.material" type="Material" id=12]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 20.0
+
+[sub_resource type="CylinderMesh" id=2]
+material = ExtResource( 12 )
+top_radius = 20.0
+bottom_radius = 20.0
+
+[node name="Level3D" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.989757, 0 )
+script = ExtResource( 11 )
+
+[node name="Ground" type="StaticBody" parent="."]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0 )
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00235748, 0.0799923, -0.0156199 )
+mesh = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.999999, -0.0013152, 0.000266796, 0.00117594, 0.954564, 0.298003, -0.000646609, -0.298003, 0.954565, 0, 12.113, 21.2246 )
+
+[node name="Background" type="Node" parent="."]
+
+[node name="Backgroundcolosseum" parent="Background" instance=ExtResource( 5 )]
+transform = Transform( -1.31134e-07, 0, -3, 0, 2, 0, 3, 0, -1.31134e-07, 0, -3.68692, -32.4861 )
+
+[node name="Hazards" type="Node" parent="."]
+
+[node name="Neutral" type="Node" parent="."]
+
+[node name="Checkpoints" type="Node" parent="."]
+
+[node name="Checkpoint" type="Position3D" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0529404, 10.7622, 0.0285683 )
+
+[node name="RestartTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Goal" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9785, 9.83121, 0.943188 )
+
+[node name="FanfareAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="CrowdLaughter" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+
+[node name="CrowdCheer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -13.983
+
+[node name="CrowdBoo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -13.983
+
+[connection signal="timeout" from="RestartTimer" to="." method="_on_RestartTimer_timeout"]

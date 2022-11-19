@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Level/Goal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Level/Neutral/Platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/3D/Background/Background.glb" type="PackedScene" id=3]
-[ext_resource path="res://Assets/3D/Background/Material_003.material" type="Material" id=4]
-[ext_resource path="res://Level/Hazard.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level/Neutral/MovingPlatform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level/Hazards/Hazard.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level/Level3D.gd" type="Script" id=6]
 [ext_resource path="res://Assets/3D/Background/Material.material" type="Material" id=7]
 [ext_resource path="res://Assets/SFX/fanfare.ogg" type="AudioStream" id=8]
@@ -19,13 +20,6 @@ radius = 10.0
 material = ExtResource( 7 )
 top_radius = 10.0
 bottom_radius = 10.0
-
-[sub_resource type="PhysicsMaterial" id=5]
-
-[sub_resource type="BoxShape" id=3]
-
-[sub_resource type="CubeMesh" id=4]
-material = ExtResource( 4 )
 
 [node name="Level3D" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.989757, 0 )
@@ -56,63 +50,22 @@ transform = Transform( 0.999999, -0.0013152, 0.000266796, 0.00117594, 0.954564, 
 [node name="Hazard" parent="Hazards" instance=ExtResource( 5 )]
 transform = Transform( 10, 0, 0, 0, 2, 0, 0, 0, 1.8, 0, 0, 0 )
 
-[node name="Obstacles" type="Node" parent="."]
+[node name="Neutral" type="Node" parent="."]
 
-[node name="StaticBody" type="StaticBody" parent="Obstacles"]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -11.5589, 1.15718, 0 )
-collision_layer = 2
-collision_mask = 3
-physics_material_override = SubResource( 5 )
+[node name="Platform" parent="Neutral" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 2, -18.3451, 3.77033, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Obstacles/StaticBody"]
-shape = SubResource( 3 )
+[node name="Platform4" parent="Neutral" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 2, 16.6015, 3.77033, 0 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Obstacles/StaticBody"]
-mesh = SubResource( 4 )
+[node name="Platform2" parent="Neutral" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -11.4381, 1.94496, 0 )
 
-[node name="StaticBody5" type="StaticBody" parent="Obstacles"]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -0.66549, 1.15718, 0 )
-collision_layer = 2
-collision_mask = 3
+[node name="Platform3" parent="Neutral" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 10.9816, 1.94496, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Obstacles/StaticBody5"]
-shape = SubResource( 3 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Obstacles/StaticBody5"]
-mesh = SubResource( 4 )
-
-[node name="StaticBody2" type="StaticBody" parent="Obstacles"]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 10.8515, 1.15718, 0 )
-collision_layer = 2
-collision_mask = 3
-
-[node name="CollisionShape" type="CollisionShape" parent="Obstacles/StaticBody2"]
-shape = SubResource( 3 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Obstacles/StaticBody2"]
-mesh = SubResource( 4 )
-
-[node name="StaticBody3" type="StaticBody" parent="Obstacles"]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 13.5053, 5.21815, 0.271532 )
-collision_layer = 2
-collision_mask = 3
-
-[node name="CollisionShape" type="CollisionShape" parent="Obstacles/StaticBody3"]
-shape = SubResource( 3 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Obstacles/StaticBody3"]
-mesh = SubResource( 4 )
-
-[node name="StaticBody4" type="StaticBody" parent="Obstacles"]
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 2, -17.5222, 4.14692, 0.271532 )
-collision_layer = 2
-collision_mask = 3
-
-[node name="CollisionShape" type="CollisionShape" parent="Obstacles/StaticBody4"]
-shape = SubResource( 3 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Obstacles/StaticBody4"]
-mesh = SubResource( 4 )
+[node name="MovingPlatform" parent="Neutral" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.94214, 2.86181, 0.00529289 )
 
 [node name="Checkpoints" type="Node" parent="."]
 
@@ -123,7 +76,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5275, 10.7622, 0.0285683 )
 one_shot = true
 
 [node name="Goal" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0946, 8.90656, 0.943188 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9785, 9.83121, 0.943188 )
 
 [node name="FanfareAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )

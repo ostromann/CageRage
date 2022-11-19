@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://Level/Sprite3D.gd" type="Script" id=2]
+[ext_resource path="res://Level/CrowdVisitor.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -60,7 +60,7 @@ tracks/1/keys = {
 }
 
 [node name="CrowdVisitor" type="Sprite3D"]
-transform = Transform( 0.870224, 0, 0, 0, 1.12978, 0, 0, 0, 1, 0, 0.94735, 0 )
+transform = Transform( 1.05476, 0, 0, 0, 0.945241, 0, 0, 0, 1, 0, 0, 0 )
 billboard = 2
 texture = ExtResource( 1 )
 script = ExtResource( 2 )

@@ -1,7 +1,7 @@
 extends Spatial
 
 
-const RIGID_PLAYER = preload("res://RigidPlayer/RigidPlayer.tscn")
+const RIGID_PLAYER = preload("res://Player/RigidPlayer.tscn")
 var player
 
 
