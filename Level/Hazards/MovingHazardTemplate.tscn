@@ -40,7 +40,7 @@ tracks/0/keys = {
 "values": [ 0.0, 0.0, 1.0, 1.0 ]
 }
 
-[node name="MovingPlatform" type="Spatial"]
+[node name="MovingHazardTemplate" type="Spatial"]
 
 [node name="HazardTemplate" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )

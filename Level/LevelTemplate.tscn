@@ -90,38 +90,6 @@ transform = Transform( 0.8, 0, 0, 0, 1, 0, 0, 0, 1, -0.486797, -3.8147e-06, -0.0
 [node name="Backgroundcolosseum" parent="Background" instance=ExtResource( 5 )]
 transform = Transform( -1.31134e-07, 0, -3, 0, 2, 0, 3, 0, -1.31134e-07, 0, -3.68692, -32.4861 )
 
-[node name="Flag11" parent="Background" instance=ExtResource( 6 )]
-transform = Transform( 0.945842, 0, -0.751813, 0, 1.5, 0, 0.645297, 0, 1.10197, -27.0067, 12.3336, -17.0574 )
-
-[node name="Flag13" parent="Background" instance=ExtResource( 6 )]
-transform = Transform( 0.949248, 0, 0.745963, 0, 1.5, 0, -0.640276, 0, 1.10594, 27, 12.334, -17.057 )
-
-[node name="Flag12" parent="Background" instance=ExtResource( 6 )]
-transform = Transform( 1.13139, 0, 0.432998, 0, 1, 0, -0.411792, 0, 1.18965, 29.9974, 18.0721, -23.6226 )
-visible = false
-
-[node name="Flag5" parent="Background" instance=ExtResource( 6 )]
-transform = Transform( 0.840889, 0, -0.907596, 0, 0.5, 0, 0.732818, 0, 1.02692, -26, 19.2564, -40.042 )
-
-[node name="Flag6" parent="Background" instance=ExtResource( 6 )]
-transform = Transform( 0.841803, 0, 0.899137, 0, 0.5, 0, -0.731768, 0, 1.03434, 25.8448, 19.2564, -40.0223 )
-
-[node name="Flag7" parent="Background" instance=ExtResource( 6 )]
-transform = Transform( 0.43344, 0, 1.32126, 0, 0.5, 0, -0.932079, 0, 0.685566, 17.0385, 19.2564, -47.1607 )
-
-[node name="Flag8" parent="Background" instance=ExtResource( 6 )]
-transform = Transform( 0.434422, 0, -1.34907, 0, 0.5, 0, 0.931622, 0, 0.62908, -17, 19.2564, -47.161 )
-
-[node name="Flag9" parent="Background" instance=ExtResource( 6 )]
-transform = Transform( -0.0213268, 0, -1.54315, 0, 0.5, 0, 0.994189, 0, 0.191031, -5.50404, 19.2564, -50.9792 )
-
-[node name="Flag10" parent="Background" instance=ExtResource( 6 )]
-transform = Transform( 0.173609, 0, 1.53806, 0, 0.5, 0, -0.984616, 0, 0.18343, 6.26986, 19.316, -50.7265 )
-
-[node name="Flag4" parent="Background" instance=ExtResource( 6 )]
-transform = Transform( 1.13164, 0, 0.432846, 0, 1.5, 0, -0.411883, 0, 1.18924, 26, 12, -14 )
-visible = false
-
 [node name="Crowd" type="Spatial" parent="Background"]
 
 [node name="Rang" type="Spatial" parent="Background/Crowd"]
@@ -299,6 +267,40 @@ transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, -27.8542, 6.0912, -20.1373 
 
 [node name="CrowdVisitor4" parent="Background/Crowd/Rang3" instance=ExtResource( 7 )]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, -9.58697, 6.20934, -30.9062 )
+
+[node name="Flags" type="Spatial" parent="Background"]
+
+[node name="Flag11" parent="Background/Flags" instance=ExtResource( 6 )]
+transform = Transform( 0.945842, 0, -0.751813, 0, 1.5, 0, 0.645297, 0, 1.10197, -27.0067, 12.3336, -17.0574 )
+
+[node name="Flag13" parent="Background/Flags" instance=ExtResource( 6 )]
+transform = Transform( 0.949248, 0, 0.745963, 0, 1.5, 0, -0.640276, 0, 1.10594, 27, 12.334, -17.057 )
+
+[node name="Flag12" parent="Background/Flags" instance=ExtResource( 6 )]
+transform = Transform( 1.13139, 0, 0.432998, 0, 1, 0, -0.411792, 0, 1.18965, 29.9974, 18.0721, -23.6226 )
+visible = false
+
+[node name="Flag5" parent="Background/Flags" instance=ExtResource( 6 )]
+transform = Transform( 0.840889, 0, -0.907596, 0, 0.5, 0, 0.732818, 0, 1.02692, -26, 19.2564, -40.042 )
+
+[node name="Flag6" parent="Background/Flags" instance=ExtResource( 6 )]
+transform = Transform( 0.841803, 0, 0.899137, 0, 0.5, 0, -0.731768, 0, 1.03434, 25.8448, 19.2564, -40.0223 )
+
+[node name="Flag7" parent="Background/Flags" instance=ExtResource( 6 )]
+transform = Transform( 0.43344, 0, 1.32126, 0, 0.5, 0, -0.932079, 0, 0.685566, 17.0385, 19.2564, -47.1607 )
+
+[node name="Flag8" parent="Background/Flags" instance=ExtResource( 6 )]
+transform = Transform( 0.434422, 0, -1.34907, 0, 0.5, 0, 0.931622, 0, 0.62908, -17, 19.2564, -47.161 )
+
+[node name="Flag9" parent="Background/Flags" instance=ExtResource( 6 )]
+transform = Transform( -0.0213268, 0, -1.54315, 0, 0.5, 0, 0.994189, 0, 0.191031, -5.50404, 19.2564, -50.9792 )
+
+[node name="Flag10" parent="Background/Flags" instance=ExtResource( 6 )]
+transform = Transform( 0.173609, 0, 1.53806, 0, 0.5, 0, -0.984616, 0, 0.18343, 6.26986, 19.316, -50.7265 )
+
+[node name="Flag4" parent="Background/Flags" instance=ExtResource( 6 )]
+transform = Transform( 1.13164, 0, 0.432846, 0, 1.5, 0, -0.411883, 0, 1.18924, 26, 12, -14 )
+visible = false
 
 [node name="Hazards" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.6264 )

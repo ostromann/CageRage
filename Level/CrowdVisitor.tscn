@@ -82,7 +82,6 @@ tracks/1/keys = {
 [node name="CrowdVisitor" type="AnimatedSprite3D"]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
 billboard = 2
-render_priority = 127
 frames = SubResource( 5 )
 animation = "0"
 playing = true
