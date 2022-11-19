@@ -22,5 +22,5 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 16.544, -4.11463, -0.000360489
 [node name="Pillar4" parent="Neutral" index="3" instance=ExtResource( 2 )]
 transform = Transform( -2, -1.74846e-07, 0, 1.74846e-07, -2, 0, 0, 0, 2, 16.544, 2.01632, -0.000360489 )
 
-[node name="Goal" parent="." index="7"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.396, 9.88253, 0.943188 )
+[node name="Goal" parent="." index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6581, 9.88253, 0.943188 )

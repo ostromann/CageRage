@@ -60,7 +60,6 @@ tracks/1/keys = {
 }
 
 [node name="CrowdVisitor" type="Sprite3D"]
-transform = Transform( 1.05476, 0, 0, 0, 0.945241, 0, 0, 0, 1, 0, 0, 0 )
 billboard = 2
 texture = ExtResource( 1 )
 script = ExtResource( 2 )

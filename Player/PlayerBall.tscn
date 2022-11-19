@@ -28,8 +28,8 @@ material = ExtResource( 3 )
 size = Vector3( 0.4, 0.4, 0.4 )
 
 [node name="PlayerBall" type="RigidBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 collision_mask = 47
+mass = 5.0
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -43,7 +43,6 @@ visible = false
 mesh = SubResource( 2 )
 
 [node name="Label" type="Label" parent="."]
-visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -34.0
@@ -53,7 +52,6 @@ margin_bottom = 76.0
 text = "is_on_floor: "
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -138.0
@@ -66,7 +64,6 @@ transform = Transform( -1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, -
 mesh = SubResource( 3 )
 
 [node name="CPUParticles" type="CPUParticles" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 emitting = false
 amount = 16
 one_shot = true

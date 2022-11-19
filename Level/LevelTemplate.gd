@@ -1,5 +1,7 @@
 extends Spatial
 
+
+signal level_done()
 export var next_level : String = ""
 const RIGID_PLAYER = preload("res://Player/RigidPlayer.tscn")
 var player
@@ -19,7 +21,10 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("reset_level"):
 		reset_level()
-		
+	
+#
+#func _physics_process(delta):
+#	$Camera.look_at(player.get_node('PlayerBall').global_translation,Vector3.UP)
 
 
 func player_died():
@@ -33,8 +38,6 @@ func player_died():
 
 func _on_RestartTimer_timeout():
 	reset_level()
-	
-
 	
 func reset_level():
 	if player:
@@ -53,16 +56,7 @@ func _on_Goal_body_entered(body):
 	print('Player won!')
 	$FadeOutTimer.start()
 	$FadingAnimations.play('fade_out')
-#	get_tree().call_group("GLOBAL", "next_level")
-
-	
-	
-	
-
+	emit_signal("level_done")
 
 func _on_FadeOutTimer_timeout():
-	if not next_level == "":
-		get_tree().change_scene(next_level)
-	else:
-		pass
-		# get_tree().change_scene() Game won
+	emit_signal("level_done")

@@ -81,7 +81,6 @@ mesh = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.999999, -0.0013152, 0.000266796, 0.00126484, 0.990134, 0.140119, -0.000448449, -0.140119, 0.990135, 0, 15.6219, 30.5628 )
-current = true
 fov = 55.5055
 
 [node name="Background" type="Spatial" parent="."]
