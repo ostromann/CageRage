@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Level/Goal.gd" type="Script" id=1]
 [ext_resource path="res://Assets/3D/Background/Material_001.material" type="Material" id=2]
@@ -8,6 +8,10 @@
 [sub_resource type="CubeMesh" id=2]
 material = ExtResource( 2 )
 
+[sub_resource type="CubeMesh" id=3]
+material = ExtResource( 2 )
+size = Vector3( 0.4, 0.4, 0.4 )
+
 [node name="Goal" type="Area"]
 collision_layer = 8
 script = ExtResource( 1 )
@@ -16,6 +20,18 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
+visible = false
 mesh = SubResource( 2 )
+
+[node name="CPUParticles" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000300705, -1.07572, 0.00153208 )
+mesh = SubResource( 3 )
+emission_shape = 5
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_height = 1.0
+emission_ring_axis = Vector3( 0, 0, 1 )
+gravity = Vector3( 0, 9.8, 0 )
+color = Color( 0, 1, 0.184314, 0.337255 )
 
 [connection signal="body_entered" from="." to="." method="_on_Goal_body_entered"]

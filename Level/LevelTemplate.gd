@@ -47,7 +47,7 @@ func reset_level():
 	
 func spawn_player():
 	player = RIGID_PLAYER.instance()
-	player.translation = current_checkpoint.translation
+	player.translation = current_checkpoint.global_translation
 	add_child(player)
 
 
