@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Backgroundcolosseum.glb-67202a10b3b6a21d777f7845d383e29c.scn"
+path="res://.import/Backgroundcolosseum.glb-6edf6af658369f1e1a4d15f33da25498.scn"
 
 [deps]
 
-source_file="res://Assets/3D/Backgroundcolosseum.glb"
-dest_files=[ "res://.import/Backgroundcolosseum.glb-67202a10b3b6a21d777f7845d383e29c.scn" ]
+source_file="res://assets/3D/Backgroundcolosseum.glb"
+dest_files=[ "res://.import/Backgroundcolosseum.glb-6edf6af658369f1e1a4d15f33da25498.scn" ]
 
 [params]
 

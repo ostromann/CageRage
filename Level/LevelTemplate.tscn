@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/SFX/crowd_cheer_short.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Assets/SFX/crowd_boo.wav" type="AudioStream" id=2]
 [ext_resource path="res://Assets/SFX/fanfare.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Assets/SFX/crowd_laughter.wav" type="AudioStream" id=4]
 [ext_resource path="res://Assets/3D/Background/Backgroundcolosseum.glb" type="PackedScene" id=5]
+[ext_resource path="res://Level/Neutral/Rope.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level/CrowdVisitor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Level/Goal.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Level/Level3D.gd" type="Script" id=11]
 [ext_resource path="res://Assets/3D/Background/Material.material" type="Material" id=12]
@@ -45,6 +47,8 @@ transform = Transform( -1.31134e-07, 0, -3, 0, 2, 0, 3, 0, -1.31134e-07, 0, -3.6
 
 [node name="Neutral" type="Node" parent="."]
 
+[node name="Rope" parent="Neutral" instance=ExtResource( 6 )]
+
 [node name="Checkpoints" type="Node" parent="."]
 
 [node name="Checkpoint" type="Position3D" parent="Checkpoints"]
@@ -70,5 +74,35 @@ volume_db = -13.983
 [node name="CrowdBoo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 volume_db = -13.983
+
+[node name="CrowdVisitor" parent="." instance=ExtResource( 7 )]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, -7.56459, 7.05123, -30.2539 )
+
+[node name="CrowdVisitor2" parent="." instance=ExtResource( 7 )]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, -1.92341, 7.05123, -31.6162 )
+
+[node name="CrowdVisitor3" parent="." instance=ExtResource( 7 )]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 3.49356, 7.05123, -30.2539 )
+
+[node name="CrowdVisitor4" parent="." instance=ExtResource( 7 )]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 10.2246, 7.05123, -29.9135 )
+
+[node name="CrowdVisitor5" parent="." instance=ExtResource( 7 )]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 15.8287, 7.05123, -28.2891 )
+
+[node name="CrowdVisitor6" parent="." instance=ExtResource( 7 )]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 19.8165, 7.05123, -25.5156 )
+
+[node name="CrowdVisitor7" parent="." instance=ExtResource( 7 )]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 23.1297, 7.05123, -22.6254 )
+
+[node name="CrowdVisitor8" parent="." instance=ExtResource( 7 )]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, -11.8709, 7.05123, -29.5028 )
+
+[node name="CrowdVisitor9" parent="." instance=ExtResource( 7 )]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, -16.004, 7.05123, -27.4335 )
+
+[node name="CrowdVisitor10" parent="." instance=ExtResource( 7 )]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, -20.0736, 7.05123, -25.3886 )
 
 [connection signal="timeout" from="RestartTimer" to="." method="_on_RestartTimer_timeout"]

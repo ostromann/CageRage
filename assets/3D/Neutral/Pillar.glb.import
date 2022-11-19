@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Pillar.glb-5026bb17e9eb8d7567b36621a967bfa0.scn"
+path="res://.import/Pillar.glb-e33a2eecf359c9ac45c4f3297d2cd5bc.scn"
 
 [deps]
 
-source_file="res://Assets/3D/Neutral/Pillar.glb"
-dest_files=[ "res://.import/Pillar.glb-5026bb17e9eb8d7567b36621a967bfa0.scn" ]
+source_file="res://assets/3D/Neutral/Pillar.glb"
+dest_files=[ "res://.import/Pillar.glb-e33a2eecf359c9ac45c4f3297d2cd5bc.scn" ]
 
 [params]
 
