@@ -1,11 +1,10 @@
 extends RigidBody
 
 
-export var MAX_JUMP_IMPULSE = 80
-export var LATERAL_SPEED = 200
+export var MAX_JUMP_IMPULSE = 320
+export var LATERAL_FORCE = 4000
+#export var LATERAL_SPEED = 200
 export var JUMP_CHARGE_FACTOR = 2.0 # per second charges up to 1.0
-export var GRAVITY = 9.81
-export var ACCELERATION = 10
 
 const UP = Vector3.UP
 
@@ -49,7 +48,7 @@ func get_direction():
 	return direction
 	
 func roll(delta):
-	add_central_force(Vector3.RIGHT * direction.x * delta * 2000)
+	add_central_force(Vector3.RIGHT * direction.x * delta * LATERAL_FORCE)
 #
 #
 #func animate():

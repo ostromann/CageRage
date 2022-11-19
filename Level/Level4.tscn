@@ -11,6 +11,7 @@ _data = {
 }
 
 [node name="Level4" instance=ExtResource( 1 )]
+next_level = "res://Level/Level5.tscn"
 
 [node name="Pillar4" parent="Neutral" index="0" instance=ExtResource( 2 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 16.544, 4.76837e-07, -0.000360489 )

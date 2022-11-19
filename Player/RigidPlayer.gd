@@ -7,3 +7,7 @@ func _process(delta):
 		$PlayerBall.can_jump = true
 	else:
 		$PlayerBall.can_jump = false
+		
+func hurt():
+	get_node("PlayerBall").get_node("CPUParticles").emitting = true
+	$AudioStreamPlayer.play()

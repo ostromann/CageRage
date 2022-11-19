@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/PlayerBall.gd" type="Script" id=1]
 [ext_resource path="res://Assets/3D/Prisoner/Material_002.material" type="Material" id=2]
+[ext_resource path="res://Assets/3D/Background/Material_002.material" type="Material" id=3]
 
 [sub_resource type="SphereShape" id=1]
 
@@ -22,8 +23,13 @@ surfaces/0 = {
 "vertex_count": 120
 }
 
+[sub_resource type="CubeMesh" id=4]
+material = ExtResource( 3 )
+size = Vector3( 0.4, 0.4, 0.4 )
+
 [node name="PlayerBall" type="RigidBody"]
 collision_mask = 47
+mass = 5.0
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -56,3 +62,23 @@ max_value = 1.0
 [node name="Body" type="MeshInstance" parent="."]
 transform = Transform( -1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, -0.0433345, -0.353235, -0.0133195 )
 mesh = SubResource( 3 )
+
+[node name="CPUParticles" type="CPUParticles" parent="."]
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 0.73
+randomness = 0.25
+local_coords = false
+mesh = SubResource( 4 )
+emission_shape = 1
+emission_sphere_radius = 0.5
+direction = Vector3( 1, 1, 1 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 5.0
+radial_accel = 12.84
+radial_accel_random = 0.42
+angle = 171.7
+angle_random = 0.48
+color = Color( 1, 0, 0, 1 )
