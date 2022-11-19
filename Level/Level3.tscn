@@ -6,6 +6,7 @@
 [ext_resource path="res://Level/Neutral/Block.tscn" type="PackedScene" id=4]
 
 [node name="Level3" instance=ExtResource( 1 )]
+next_level = "res://Level/Level4.tscn"
 
 [node name="Hazard" parent="Hazards" index="0" instance=ExtResource( 2 )]
 transform = Transform( 18, 0, 0, 0, 2, 0, 0, 0, 1, 8.02398, -0.085, 0 )

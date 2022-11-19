@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Cage Rage"
-run/main_scene="res://Level/Level3D.tscn"
+run/main_scene="res://GLOBAL.tscn"
 config/icon="res://icon.png"
 
 [gui]

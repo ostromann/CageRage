@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/SFX/crowd_cheer_short.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Assets/SFX/crowd_boo.wav" type="AudioStream" id=2]
 [ext_resource path="res://Assets/SFX/fanfare.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Assets/SFX/crowd_laughter.wav" type="AudioStream" id=4]
 [ext_resource path="res://Assets/3D/Background/Backgroundcolosseum.glb" type="PackedScene" id=5]
+[ext_resource path="res://Level/Background/Flag.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level/Goal.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Level/Level3D.gd" type="Script" id=11]
+[ext_resource path="res://Level/LevelTemplate.gd" type="Script" id=11]
 [ext_resource path="res://Assets/3D/Background/Material.material" type="Material" id=12]
 
 [sub_resource type="CylinderShape" id=1]
@@ -17,7 +18,52 @@ material = ExtResource( 12 )
 top_radius = 20.0
 bottom_radius = 20.0
 
-[node name="Level3D" type="Spatial"]
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="LevelTemplate" type="Spatial" groups=["GameState"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.989757, 0 )
 script = ExtResource( 11 )
 
@@ -34,12 +80,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00235748, 0.0799923, -0.0156
 mesh = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.999999, -0.0013152, 0.000266796, 0.00117594, 0.954564, 0.298003, -0.000646609, -0.298003, 0.954565, 0, 12.113, 21.2246 )
+transform = Transform( 0.999999, -0.0013152, 0.000266796, 0.00126484, 0.990134, 0.140119, -0.000448449, -0.140119, 0.990135, 0, 15.6219, 30.5628 )
+current = true
+fov = 55.5055
 
-[node name="Background" type="Node" parent="."]
+[node name="Background" type="Spatial" parent="."]
+transform = Transform( 0.8, 0, 0, 0, 1, 0, 0, 0, 1, -0.486797, -3.8147e-06, -0.00636673 )
 
 [node name="Backgroundcolosseum" parent="Background" instance=ExtResource( 5 )]
 transform = Transform( -1.31134e-07, 0, -3, 0, 2, 0, 3, 0, -1.31134e-07, 0, -3.68692, -32.4861 )
+
+[node name="Flag" parent="Background" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1.5, 0, 1.5, 0, -1, 0, -6.55671e-08, 34.4483, 12.137, -4.09365 )
+
+[node name="Flag2" parent="Background" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1.5, 0, 1.5, 0, -1, 0, -6.55671e-08, -34.0156, 12.137, -4.09365 )
 
 [node name="Hazards" type="Node" parent="."]
 
@@ -49,6 +104,10 @@ transform = Transform( -1.31134e-07, 0, -3, 0, 2, 0, 3, 0, -1.31134e-07, 0, -3.6
 
 [node name="Checkpoint" type="Position3D" parent="Checkpoints"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.261, 14.4186, 0.0285683 )
+
+[node name="FadeOutTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [node name="RestartTimer" type="Timer" parent="."]
 one_shot = true
@@ -71,4 +130,16 @@ volume_db = -13.983
 stream = ExtResource( 2 )
 volume_db = -13.983
 
+[node name="FadingAnimations" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/fade_in = SubResource( 5 )
+anims/fade_out = SubResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+
+[connection signal="timeout" from="FadeOutTimer" to="." method="_on_FadeOutTimer_timeout"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_RestartTimer_timeout"]
+[connection signal="body_entered" from="Goal" to="." method="_on_Goal_body_entered"]

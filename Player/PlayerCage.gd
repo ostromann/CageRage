@@ -13,7 +13,7 @@ func _physics_process(delta):
 	
 	if overlapping_bodies:
 		for overlapping_body in overlapping_bodies:
-			print('overlapping body: ', overlapping_body.global_translation.y, ' us: ', global_translation.y)
+#			print('overlapping body: ', overlapping_body.global_translation.y, ' us: ', global_translation.y)
 			has_ground_contact = true
 	else:
 		has_ground_contact = false

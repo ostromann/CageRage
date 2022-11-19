@@ -4,6 +4,7 @@
 [ext_resource path="res://Level/Neutral/Pillar.tscn" type="PackedScene" id=2]
 
 [node name="Level1" instance=ExtResource( 1 )]
+next_level = "res://Level/Level2.tscn"
 
 [node name="Pillar3" parent="Neutral" index="0" instance=ExtResource( 2 )]
 transform = Transform( 1.07569, 1.68609, 0, -1.68609, 1.07569, 0, 0, 0, 2, 3.68472, 1.6785, -0.000360489 )
@@ -17,5 +18,5 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -18.9912, 4.76837e-07, -0.0003
 [node name="Checkpoint" parent="Checkpoints" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7022, 15.9754, 0.0285683 )
 
-[node name="Goal" parent="." index="7"]
+[node name="Goal" parent="." index="8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9785, 15.184, 0.943188 )
