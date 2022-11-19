@@ -16,9 +16,10 @@ func _ready():
 
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if Input.is_action_just_pressed("reset_level"):
+		reset_level()
+		
 
 
 func player_died():
@@ -34,8 +35,12 @@ func player_won():
 
 
 func _on_RestartTimer_timeout():
+	reset_level()
+	
+func reset_level():
 	player.queue_free()
 	spawn_player()
+	
 	
 func spawn_player():
 	player = RIGID_PLAYER.instance()

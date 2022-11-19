@@ -48,13 +48,13 @@ transform = Transform( -1.31134e-07, 0, -3, 0, 2, 0, 3, 0, -1.31134e-07, 0, -3.6
 [node name="Checkpoints" type="Node" parent="."]
 
 [node name="Checkpoint" type="Position3D" parent="Checkpoints"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0529404, 10.7622, 0.0285683 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.261, 14.4186, 0.0285683 )
 
 [node name="RestartTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="Goal" parent="." instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9785, 9.83121, 0.943188 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.396, 13.881, 0.943188 )
 
 [node name="FanfareAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )

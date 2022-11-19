@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Player.glb-6273661d3d3c2ad4689e6c443882ca57.scn"
+path="res://.import/block_top.glb-29ec9bcd0a05bff68d1abd3176907a40.scn"
 
 [deps]
 
-source_file="res://Assets/3D/Player/Player.glb"
-dest_files=[ "res://.import/Player.glb-6273661d3d3c2ad4689e6c443882ca57.scn" ]
+source_file="res://Assets/3D/Neutral/block_top.glb"
+dest_files=[ "res://.import/block_top.glb-29ec9bcd0a05bff68d1abd3176907a40.scn" ]
 
 [params]
 
