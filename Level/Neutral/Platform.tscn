@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/3D/Background/Material_003.material" type="Material" id=1]
+[ext_resource path="res://assets/2D sprites/Block.png" type="Texture" id=2]
 
 [sub_resource type="PhysicsMaterial" id=6]
 rough = true
@@ -9,6 +10,9 @@ rough = true
 
 [sub_resource type="CubeMesh" id=4]
 material = ExtResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_texture = ExtResource( 2 )
 
 [node name="Platform" type="StaticBody"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0 )
@@ -21,3 +25,4 @@ shape = SubResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = SubResource( 4 )
+material/0 = SubResource( 7 )
