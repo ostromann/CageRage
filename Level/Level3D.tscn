@@ -1,21 +1,40 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Player/Player_with_obj.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/T_PurpleBackground_Version1_Layer1.png" type="Texture" id=2]
+[ext_resource path="res://Level/Goal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/3D/Background/Background.glb" type="PackedScene" id=3]
+[ext_resource path="res://Assets/3D/Background/Material_003.material" type="Material" id=4]
+[ext_resource path="res://Level/Hazard.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level/Level3D.gd" type="Script" id=6]
+[ext_resource path="res://Assets/3D/Background/Material.material" type="Material" id=7]
+[ext_resource path="res://Assets/SFX/fanfare.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Assets/SFX/crowd_cheer_short.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Assets/SFX/crowd_boo.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/SFX/crowd_laughter.wav" type="AudioStream" id=11]
+[ext_resource path="res://Level/Crowd.tscn" type="PackedScene" id=12]
 
 [sub_resource type="CylinderShape" id=1]
 radius = 10.0
 
 [sub_resource type="CylinderMesh" id=2]
+material = ExtResource( 7 )
 top_radius = 10.0
 bottom_radius = 10.0
 
+[sub_resource type="PhysicsMaterial" id=5]
+
+[sub_resource type="BoxShape" id=3]
+
+[sub_resource type="CubeMesh" id=4]
+material = ExtResource( 4 )
+
 [node name="Level3D" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.989757, 0 )
+script = ExtResource( 6 )
 
 [node name="Ground" type="StaticBody" parent="."]
 transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0 )
+collision_layer = 2
+collision_mask = 3
 
 [node name="CollisionShape" type="CollisionShape" parent="Ground"]
 shape = SubResource( 1 )
@@ -23,33 +42,105 @@ shape = SubResource( 1 )
 [node name="MeshInstance" type="MeshInstance" parent="Ground"]
 mesh = SubResource( 2 )
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961439, 1.52154, 14.602 )
-fov = 85.4734
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
-
-[node name="SpotLight" type="SpotLight" parent="Player"]
-transform = Transform( -4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 0, 23.2983, 0 )
-light_color = Color( 0.847059, 0.14902, 0.14902, 1 )
-light_energy = 11.339
-light_indirect_energy = 7.752
-spot_range = 32.8114
-
-[node name="BG" type="Sprite3D" parent="."]
-transform = Transform( -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0, 1, 0, 12.8716, -31.5262 )
-visible = false
-texture = ExtResource( 2 )
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
-
 [node name="Background" parent="." instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, -2.5, 0, 1, 0, 1, 0, -1.09278e-07, -2.27315, 0.0564575, -21.5216 )
 
 [node name="Background2" parent="." instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, 2.5, 0, 1, 0, 1, 0, 1.09278e-07, -2.27315, 0.0564575, -21.5216 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.999999, -0.0013152, 0.000266796, 0.00117594, 0.954564, 0.298003, -0.000646609, -0.298003, 0.954565, 0, 12.113, 21.2246 )
+
+[node name="Hazards" type="Node" parent="."]
+
+[node name="Hazard" parent="Hazards" instance=ExtResource( 5 )]
+transform = Transform( 10, 0, 0, 0, 2, 0, 0, 0, 1.8, 0, 0, 0 )
+
+[node name="Obstacles" type="Node" parent="."]
+
+[node name="StaticBody" type="StaticBody" parent="Obstacles"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -11.5589, 1.15718, 0 )
+collision_layer = 2
+collision_mask = 3
+physics_material_override = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Obstacles/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Obstacles/StaticBody"]
+mesh = SubResource( 4 )
+
+[node name="StaticBody5" type="StaticBody" parent="Obstacles"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -0.66549, 1.15718, 0 )
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape" parent="Obstacles/StaticBody5"]
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Obstacles/StaticBody5"]
+mesh = SubResource( 4 )
+
+[node name="StaticBody2" type="StaticBody" parent="Obstacles"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 10.8515, 1.15718, 0 )
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape" parent="Obstacles/StaticBody2"]
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Obstacles/StaticBody2"]
+mesh = SubResource( 4 )
+
+[node name="StaticBody3" type="StaticBody" parent="Obstacles"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 13.5053, 5.21815, 0.271532 )
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape" parent="Obstacles/StaticBody3"]
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Obstacles/StaticBody3"]
+mesh = SubResource( 4 )
+
+[node name="StaticBody4" type="StaticBody" parent="Obstacles"]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 2, -17.5222, 4.14692, 0.271532 )
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape" parent="Obstacles/StaticBody4"]
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Obstacles/StaticBody4"]
+mesh = SubResource( 4 )
+
+[node name="Checkpoints" type="Node" parent="."]
+
+[node name="Checkpoint" type="Position3D" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5275, 10.7622, 0.0285683 )
+
+[node name="RestartTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Goal" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0946, 8.90656, 0.943188 )
+
+[node name="FanfareAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="CrowdLaughter" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -10.0
+
+[node name="CrowdCheer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -13.983
+
+[node name="CrowdBoo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -13.983
+
+[node name="Crowd" parent="." instance=ExtResource( 12 )]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 1, 0, 5.86728, -21.561 )
+
+[connection signal="timeout" from="RestartTimer" to="." method="_on_RestartTimer_timeout"]
