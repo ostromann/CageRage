@@ -9,8 +9,12 @@ var right_has_ground_contact : bool = false
 
 
 func _physics_process(delta):
-	has_ground_contact = top_has_ground_contact or bottom_has_ground_contact or left_has_ground_contact or right_has_ground_contact
-	print('top ', str(top_has_ground_contact), ' right ', str(right_has_ground_contact), ' bottom ', str(bottom_has_ground_contact),  ' left ', str(left_has_ground_contact))
+	if $Diagonal/Area.get_overlapping_bodies().size() > 0:
+		has_ground_contact = true
+	else:
+		has_ground_contact = false
+#	has_ground_contact = top_has_ground_contact or bottom_has_ground_contact or left_has_ground_contact or right_has_ground_contact
+#	print('top ', str(top_has_ground_contact), ' right ', str(right_has_ground_contact), ' bottom ', str(bottom_has_ground_contact),  ' left ', str(left_has_ground_contact))
 
 
 func _on_Bottom_body_entered(body):

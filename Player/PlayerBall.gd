@@ -11,8 +11,9 @@ const UP = Vector3.UP
 
 var direction = Vector3.ZERO
 var velocity = Vector3.ZERO
-var jump_charge = 0.0
-var is_charging = false
+var jump_charge : float = 0.0
+var is_charging : bool = false
+var can_jump : bool = false
 
 
 func _ready():
@@ -37,8 +38,9 @@ func jump(delta):
 		jump_charge += JUMP_CHARGE_FACTOR * delta
 		jump_charge = clamp(jump_charge, 0, 1)
 	elif Input.is_action_just_released("jump"):
+		if can_jump:
+			apply_central_impulse(Vector3.UP * jump_charge * MAX_JUMP_IMPULSE)
 		is_charging = false
-		apply_central_impulse(Vector3.UP * jump_charge * MAX_JUMP_IMPULSE)
 		jump_charge = 0
 	
 func get_direction():
