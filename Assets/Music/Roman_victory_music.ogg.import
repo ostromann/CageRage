@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Roman_victory_music.ogg-476e1f9fdbc641655b71cd4deadc2d5d.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/Roman_victory_music.ogg"
+dest_files=[ "res://.import/Roman_victory_music.ogg-476e1f9fdbc641655b71cd4deadc2d5d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

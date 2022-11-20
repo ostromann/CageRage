@@ -43,6 +43,7 @@ visible = false
 mesh = SubResource( 2 )
 
 [node name="Label" type="Label" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -34.0
@@ -52,6 +53,7 @@ margin_bottom = 76.0
 text = "is_on_floor: "
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -138.0
