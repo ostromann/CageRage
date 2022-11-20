@@ -31,14 +31,9 @@ collision_layer = 34
 collision_mask = 19
 physics_material_override = SubResource( 3 )
 
-[node name="Light" type="Spatial" parent="."]
-transform = Transform( -0.290865, 0.566393, 0.771101, -0.0551891, 0.794672, -0.604525, -0.955171, -0.218391, -0.199883, 4.07625, 5.90386, -1.00545 )
-
-[node name="Camera" type="Spatial" parent="."]
-transform = Transform( 0.685921, 0.651558, 0.324014, 0, 0.445271, -0.895396, -0.727676, 0.61417, 0.305421, 7.35889, 4.95831, 6.92579 )
-
 [node name="Cylinder" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+use_in_baked_light = true
 mesh = SubResource( 1 )
 material/0 = SubResource( 4 )
 

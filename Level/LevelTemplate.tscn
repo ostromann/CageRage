@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/SFX/crowd_cheer_short.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Assets/SFX/crowd_boo.wav" type="AudioStream" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Level/Background/Flag.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level/CrowdVisitor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Level/Neutral/Pillar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level/Background/Torch.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Level/Goal.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Level/LevelTemplate.gd" type="Script" id=11]
 [ext_resource path="res://Assets/3D/Background/Material.material" type="Material" id=12]
@@ -64,6 +65,24 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
+
+[sub_resource type="Environment" id=6]
+background_mode = 1
+background_energy = 9.52
+ambient_light_color = Color( 0.309804, 0.160784, 0.105882, 1 )
+ambient_light_energy = 1.38
+fog_color = Color( 0.0431373, 0.121569, 0.2, 1 )
+dof_blur_far_distance = 44.98
+dof_blur_far_transition = 3.89
+dof_blur_far_amount = 0.05
+dof_blur_far_quality = 2
+glow_enabled = true
+glow_intensity = 0.55
+glow_strength = 0.74
+glow_bloom = 0.1
+glow_blend_mode = 0
+adjustment_enabled = true
+adjustment_saturation = 0.8
 
 [node name="LevelTemplate" type="Spatial" groups=["GameState"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.989757, 0 )
@@ -320,6 +339,39 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.6264 )
 [node name="Checkpoint" type="Position3D" parent="Checkpoints"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 10.048, 0.029 )
 
+[node name="Lights" type="Node" parent="."]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Lights"]
+transform = Transform( -0.960199, -0.259536, 0.103248, -0.213463, 0.920237, 0.328019, -0.180145, 0.292924, -0.939012, 0, 5.7744, 0 )
+visible = false
+light_color = Color( 0.545098, 0.360784, 0.141176, 1 )
+light_energy = 1.191
+shadow_enabled = true
+
+[node name="Torches" type="Node" parent="Lights"]
+
+[node name="Torch2" parent="Lights/Torches" instance=ExtResource( 9 )]
+transform = Transform( 1.41421, 0, 1.41421, 0, 2, 0, -1.41421, 0, 1.41421, -7, 0, -26.623 )
+
+[node name="Torch5" parent="Lights/Torches" instance=ExtResource( 9 )]
+transform = Transform( 1.41421, 0, -1.41421, 0, 2, 0, 1.41421, 0, 1.41421, 7, 0, -26.623 )
+
+[node name="Torch4" parent="Lights/Torches" instance=ExtResource( 9 )]
+transform = Transform( 1.41421, 0, 1.41421, 0, 2, 0, -1.41421, 0, 1.41421, -17.9797, 0, -20.0981 )
+
+[node name="Torch6" parent="Lights/Torches" instance=ExtResource( 9 )]
+transform = Transform( 1.41421, 0, -1.41421, 0, 2, 0, 1.41421, 0, 1.41421, 17.98, 0, -20.098 )
+
+[node name="SpotLight" type="SpotLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 0.257453, 0.966291, 0, -0.966291, 0.257453, 0, 28.3698, -5.6164 )
+light_color = Color( 0.72549, 0.596078, 0.466667, 1 )
+light_energy = 6.173
+shadow_enabled = true
+spot_range = 42.9622
+spot_attenuation = 0.812252
+spot_angle = 12.45
+spot_angle_attenuation = 0.757858
+
 [node name="FadeOutTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
@@ -354,6 +406,9 @@ anims/fade_out = SubResource( 4 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 6 )
 
 [connection signal="timeout" from="FadeOutTimer" to="." method="_on_FadeOutTimer_timeout"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_RestartTimer_timeout"]

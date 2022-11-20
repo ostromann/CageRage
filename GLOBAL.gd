@@ -1,6 +1,6 @@
 extends Node
 
-var level_list = ["res://Level/Level1.tscn"]#,"res://Level/Level2.tscn","res://Level/Level3.tscn"]#,"res://Level/Level4.tscn","res://Level/Level5.tscn"]
+var level_list = ["res://Level/Level1.tscn","res://Level/Level2.tscn","res://Level/Level3.tscn"]#,"res://Level/Level4.tscn","res://Level/Level5.tscn"]
 var level_index : int = 0
 var is_playing : bool = false
 

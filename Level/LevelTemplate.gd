@@ -16,6 +16,10 @@ func _process(delta):
 	if Input.is_action_just_pressed("reset_level"):
 		reset_level()
 
+func _physics_process(delta):
+	if player:
+		$Lights/SpotLight.look_at(player.get_node("PlayerBall").global_translation, Vector3.UP)
+
 func player_died():
 	player.hurt()
 	$CrowdLaughter.play()

@@ -1,0 +1,135 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/3D/Background/Material_003.material" type="Material" id=1]
+[ext_resource path="res://Assets/3D/Background/Material_005.material" type="Material" id=2]
+[ext_resource path="res://Assets/3D/Background/Material_004.material" type="Material" id=3]
+[ext_resource path="res://Level/Background/Flame.gd" type="Script" id=4]
+
+[sub_resource type="CubeMesh" id=1]
+material = ExtResource( 1 )
+size = Vector3( 0.2, 2, 0.2 )
+
+[sub_resource type="PrismMesh" id=2]
+material = ExtResource( 3 )
+left_to_right = 0.99403
+size = Vector3( 0.25, 0.6, 0.25 )
+
+[sub_resource type="CubeMesh" id=5]
+material = ExtResource( 2 )
+size = Vector3( 0.1, 0.1, 0.1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "New Anim"
+loop = true
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Flame/Flame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray(  )
+tracks/1/type = "value"
+tracks/1/path = NodePath("Flame/Flame:mesh:left_to_right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.180628, 0.4, 0.5, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -0.2, 1.1, -0.1, 0.7, -0.1, 1.2 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Flame/OmniLight:omni_range")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 12.0, 10.0, 12.0, 14.0, 12.0, 10.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Flame/Flame:mesh:left_to_right")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -0.2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Flame/OmniLight:omni_range")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 5.0 ]
+}
+
+[node name="Torch" type="Spatial"]
+
+[node name="Stick" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+use_in_baked_light = true
+mesh = SubResource( 1 )
+
+[node name="Flame" type="Spatial" parent="."]
+script = ExtResource( 4 )
+
+[node name="Flame" type="MeshInstance" parent="Flame"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25121, 0 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+
+[node name="CPUParticles" type="CPUParticles" parent="Flame"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.41245, 0 )
+amount = 4
+lifetime = 0.67
+explosiveness = 0.66
+randomness = 0.76
+mesh = SubResource( 5 )
+emission_shape = 1
+emission_sphere_radius = 0.2
+direction = Vector3( 0, 1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 5.0
+initial_velocity_random = 0.81
+radial_accel = 4.0
+radial_accel_random = 0.42
+tangential_accel = 25.15
+tangential_accel_random = 1.0
+color = Color( 1, 1, 1, 0.45098 )
+
+[node name="OmniLight" type="OmniLight" parent="Flame"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.95514, 0 )
+light_color = Color( 1, 0.513726, 0, 1 )
+light_energy = 2.0
+omni_range = 10.0
+omni_attenuation = 0.392292
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Flame"]
+root_node = NodePath("../..")
+reset_on_save = false
+playback_speed = 0.5
+"anims/New Anim" = SubResource( 3 )
+anims/RESET = SubResource( 4 )
+
+[node name="StartTimer" type="Timer" parent="Flame"]
+one_shot = true
+
+[connection signal="timeout" from="Flame/StartTimer" to="Flame" method="_on_StartTimer_timeout"]
