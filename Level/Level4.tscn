@@ -7,7 +7,7 @@
 [ext_resource path="res://Level/Hazards/Spikes.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level/Neutral/Pillar.tscn" type="PackedScene" id=6]
 
-[node name="LevelTemplate" instance=ExtResource( 1 )]
+[node name="LevelTemplate2" instance=ExtResource( 1 )]
 
 [node name="SpikeBall" parent="Hazards" index="0" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.487, 5.687, 0 )
