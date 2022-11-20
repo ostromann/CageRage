@@ -2,12 +2,14 @@ extends Node
 
 var level_list = [
 	"res://Level/Level1.tscn",
+	"res://Level/Level1.1.tscn",
 	"res://Level/Level2.tscn",
+	"res://Level/Level3.0.tscn",
 	"res://Level/Level3.tscn", 
-	"res://Level/Level4.tscn", 
-	"res://Level/Level5.tscn", 
-	"res://Level/Level6.tscn", 
-	"res://Level/Level7.tscn", 
+#	"res://Level/Level4.tscn", 
+#	"res://Level/Level5.tscn", 
+#	"res://Level/Level6.tscn", 
+#	"res://Level/Level7.tscn", 
 	"res://Level/Level8.tscn", 
 	"res://Level/Level9.tscn", 
 	"res://Level/Level10.tscn", 

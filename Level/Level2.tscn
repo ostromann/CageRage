@@ -15,23 +15,23 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13039, 2, 0 )
 [node name="Spikes3" parent="Hazards" index="2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90561, 2, 0 )
 
-[node name="Spikes4" parent="Hazards" index="3" instance=ExtResource( 2 )]
+[node name="Spikes7" parent="Hazards" index="3" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7466, 2, 0 )
+
+[node name="Spikes8" parent="Hazards" index="4" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.877, 2, 0 )
+
+[node name="Spikes9" parent="Hazards" index="5" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.84099, 2, 0 )
+
+[node name="Spikes4" parent="Hazards" index="6" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.91445, 2, 0 )
 
-[node name="Spikes5" parent="Hazards" index="4" instance=ExtResource( 2 )]
+[node name="Spikes5" parent="Hazards" index="7" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.78406, 2, 0 )
 
-[node name="Spikes6" parent="Hazards" index="5" instance=ExtResource( 2 )]
+[node name="Spikes6" parent="Hazards" index="8" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8201, 2, 0 )
-
-[node name="Spikes7" parent="Hazards" index="6" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8289, 2, 0 )
-
-[node name="Spikes8" parent="Hazards" index="7" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9593, 2, 0 )
-
-[node name="Spikes9" parent="Hazards" index="8" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.92329, 2, 0 )
 
 [node name="Pillar3" parent="Neutral" index="2" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32568, -1.70466, 0 )

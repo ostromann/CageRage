@@ -38,7 +38,10 @@ func jump(delta):
 		jump_charge = clamp(jump_charge, 0, 1)
 	elif Input.is_action_just_released("jump"):
 		if can_jump:
-			apply_central_impulse(direction * jump_charge * MAX_JUMP_IMPULSE)
+			var jump_impulse = Vector3(direction.x/2, direction.y, 0)
+			apply_central_impulse(jump_impulse * jump_charge * MAX_JUMP_IMPULSE)
+			# Lateral force get#s doubled here. So we 
+#			add_central_force(Vector3.RIGHT * -direction.x * delta * LATERAL_FORCE)
 		is_charging = false
 		jump_charge = 0
 	
