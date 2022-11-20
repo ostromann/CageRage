@@ -34,4 +34,12 @@ emission_ring_axis = Vector3( 0, 0, 1 )
 gravity = Vector3( 0, 9.8, 0 )
 color = Color( 0, 1, 0.184314, 0.337255 )
 
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 32.7667, 0 )
+light_color = Color( 0.286275, 0.945098, 0.0980392, 1 )
+light_energy = 3.0
+spot_range = 70.8756
+spot_angle = 6.34874
+spot_angle_attenuation = 0.258816
+
 [connection signal="body_entered" from="." to="." method="_on_Goal_body_entered"]

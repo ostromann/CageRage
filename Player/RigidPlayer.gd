@@ -7,10 +7,25 @@ func _process(delta):
 		$PlayerBall.can_jump = true
 	else:
 		$PlayerBall.can_jump = false
+	animate()
 		
 func hurt():
 	get_node("PlayerBall").get_node("CPUParticles").emitting = true
 	$HurtAudioStreamPlayer.play()
 	
+func animate():
+	if $PlayerBall.jump_charge > 0 and $PlayerBall.jump_charge < 1.0:
+		charging()
+	elif $PlayerBall.jump_charge == 1.0:
+		fully_charged()
+	else:
+		not_charging()
+	
 func charging():
-	pass
+	$FlickeringAnimationPlayer.play('charging')
+
+func fully_charged():
+	$FlickeringAnimationPlayer.play("charged")
+
+func not_charging():
+	$FlickeringAnimationPlayer.play("RESET")

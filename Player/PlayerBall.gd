@@ -50,13 +50,3 @@ func get_direction():
 	
 func roll(delta):
 	add_central_force(Vector3.RIGHT * direction.x * delta * LATERAL_FORCE)
-#
-#
-#func animate():
-#	# TODO: Figure this out
-#	if jump_charge > 0 and jump_charge < 1.0:
-#		$AnimationPlayer.play("charging")
-#	elif jump_charge == 1.0:
-#		$AnimationPlayer.play("charged")
-#	else:
-#		$AnimationPlayer.play("RESET")
