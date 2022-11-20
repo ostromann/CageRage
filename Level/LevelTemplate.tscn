@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/SFX/crowd_cheer_short.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Assets/SFX/crowd_boo.wav" type="AudioStream" id=2]
@@ -65,24 +65,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
-
-[sub_resource type="Environment" id=6]
-background_mode = 1
-background_energy = 9.52
-ambient_light_color = Color( 0.309804, 0.160784, 0.105882, 1 )
-ambient_light_energy = 1.38
-fog_color = Color( 0.0431373, 0.121569, 0.2, 1 )
-dof_blur_far_distance = 44.98
-dof_blur_far_transition = 3.89
-dof_blur_far_amount = 0.05
-dof_blur_far_quality = 2
-glow_enabled = true
-glow_intensity = 0.55
-glow_strength = 0.74
-glow_bloom = 0.1
-glow_blend_mode = 0
-adjustment_enabled = true
-adjustment_saturation = 0.8
 
 [node name="LevelTemplate" type="Spatial" groups=["GameState"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.989757, 0 )
@@ -302,6 +284,12 @@ visible = false
 [node name="Flag5" parent="Background/Flags" instance=ExtResource( 6 )]
 transform = Transform( 0.840889, 0, -0.907596, 0, 0.5, 0, 0.732818, 0, 1.02692, -26, 19.2564, -40.042 )
 
+[node name="Flag14" parent="Background/Flags" instance=ExtResource( 6 )]
+transform = Transform( 1.11925, 0, -0.370758, 0, 0.5, 0, 0.433387, 0, 1.2222, -31.7687, 19.2564, -29.3684 )
+
+[node name="Flag15" parent="Background/Flags" instance=ExtResource( 6 )]
+transform = Transform( 1.11925, 0, 0.461181, 0, 0.5, 0, -0.433386, 0, 1.19103, 31.769, 19.256, -29.368 )
+
 [node name="Flag6" parent="Background/Flags" instance=ExtResource( 6 )]
 transform = Transform( 0.841803, 0, 0.899137, 0, 0.5, 0, -0.731768, 0, 1.03434, 25.8448, 19.2564, -40.0223 )
 
@@ -342,11 +330,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 10.048, 0.029 )
 [node name="Lights" type="Node" parent="."]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="Lights"]
-transform = Transform( -0.960199, -0.259536, 0.103248, -0.213463, 0.920237, 0.328019, -0.180145, 0.292924, -0.939012, 0, 5.7744, 0 )
-visible = false
+transform = Transform( 0.97695, 0.201656, 0.0700299, -0.213463, 0.920237, 0.328019, 0.00170304, -0.335407, 0.942072, 0, 5.7744, 0 )
 light_color = Color( 0.545098, 0.360784, 0.141176, 1 )
-light_energy = 1.191
-shadow_enabled = true
+light_energy = 0.1
 
 [node name="Torches" type="Node" parent="Lights"]
 
@@ -406,9 +392,6 @@ anims/fade_out = SubResource( 4 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0 )
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 6 )
 
 [connection signal="timeout" from="FadeOutTimer" to="." method="_on_FadeOutTimer_timeout"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_RestartTimer_timeout"]
