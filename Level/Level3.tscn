@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Level/LevelTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Level/Hazards/Spikes.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level/Neutral/MovingPlatform.tscn" type="PackedScene" id=3]
+
+[node name="Level3" instance=ExtResource( 1 )]
+
+[node name="Spikes" parent="Hazards" index="0" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+
+[node name="Spikes2" parent="Hazards" index="1" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13039, 2, 0 )
+
+[node name="Spikes10" parent="Hazards" index="2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.48802, 2, 0 )
+
+[node name="Spikes3" parent="Hazards" index="3" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90561, 2, 0 )
+
+[node name="Spikes11" parent="Hazards" index="4" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.35363, 2, 0 )
+
+[node name="Spikes4" parent="Hazards" index="5" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.91445, 2, 0 )
+
+[node name="Spikes5" parent="Hazards" index="6" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.78406, 2, 0 )
+
+[node name="Spikes6" parent="Hazards" index="7" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8201, 2, 0 )
+
+[node name="Spikes7" parent="Hazards" index="8" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8289, 2, 0 )
+
+[node name="Spikes8" parent="Hazards" index="9" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9593, 2, 0 )
+
+[node name="Spikes9" parent="Hazards" index="10" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.92329, 2, 0 )
+
+[node name="MovingPlatform" parent="Neutral" index="2" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.02943, 5.32644, 0 )
+
+[node name="MovingPlatform2" parent="Neutral" index="3" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.35899, 5.32644, 0 )

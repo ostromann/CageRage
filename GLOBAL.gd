@@ -1,6 +1,6 @@
 extends Node
 
-var level_list = ["res://Level/Level1.tscn","res://Level/Level2.tscn","res://Level/Level3.tscn","res://Level/Level4.tscn","res://Level/Level5.tscn"]
+var level_list = ["res://Level/Level1.tscn"]#,"res://Level/Level2.tscn","res://Level/Level3.tscn"]#,"res://Level/Level4.tscn","res://Level/Level5.tscn"]
 var level_index : int = 0
 var is_playing : bool = false
 
@@ -19,7 +19,7 @@ func _process(delta):
 func next_level():
 	print('Called next level')
 	level_index += 1
-	if level_index <= level_list.size():
+	if level_index < level_list.size():
 		print('Loading next level ', level_list[level_index])
 		var next_level = load(level_list[level_index]).instance()
 		next_level.connect("level_done", self, "next_level")
@@ -27,4 +27,5 @@ func next_level():
 		add_child(next_level)
 		current_level = next_level	
 	else:
-		queue_free()
+		get_tree().quit()
+#		queue_free()

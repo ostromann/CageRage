@@ -119,7 +119,7 @@ transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 22.5542, 6.15861, -24.109 )
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 23.7899, 6.15861, -22.7417 )
 
 [node name="CrowdVisitor17" parent="Background/Crowd/Rang" instance=ExtResource( 7 )]
-transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 27.0978, 6.15861, -21.0286 )
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 22.2021, 6.15861, -25.7092 )
 
 [node name="CrowdVisitor2" parent="Background/Crowd/Rang" instance=ExtResource( 7 )]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, -6.35844, 6.0912, -31.9505 )
@@ -271,7 +271,7 @@ transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, -9.58697, 6.20934, -30.9062
 [node name="Flags" type="Spatial" parent="Background"]
 
 [node name="Flag11" parent="Background/Flags" instance=ExtResource( 6 )]
-transform = Transform( 0.945842, 0, -0.751813, 0, 1.5, 0, 0.645297, 0, 1.10197, -27.0067, 12.3336, -17.0574 )
+transform = Transform( 0.949248, 0, -0.745964, 0, 1.5, 0, 0.640276, 0, 1.10594, -27, 12.334, -17.057 )
 
 [node name="Flag13" parent="Background/Flags" instance=ExtResource( 6 )]
 transform = Transform( 0.949248, 0, 0.745963, 0, 1.5, 0, -0.640276, 0, 1.10594, 27, 12.334, -17.057 )
@@ -309,16 +309,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.6264 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.6264 )
 
 [node name="Pillar" parent="Neutral" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0354, 1.05685, 0.0514488 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1, 0 )
 
 [node name="Pillar2" parent="Neutral" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4173, 1.05685, 0.0514488 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1, 0 )
 
 [node name="Checkpoints" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.6264 )
 
 [node name="Checkpoint" type="Position3D" parent="Checkpoints"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7667, 10.0479, 0.0285683 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 10.048, 0.029 )
 
 [node name="FadeOutTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -328,7 +328,7 @@ one_shot = true
 one_shot = true
 
 [node name="Goal" parent="." instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3491, 7.91976, -15.5169 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 8, -15.517 )
 
 [node name="FanfareAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
