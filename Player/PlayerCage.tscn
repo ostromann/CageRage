@@ -6,7 +6,7 @@
 extents = Vector3( 1, 0.1, 1 )
 
 [sub_resource type="BoxShape" id=4]
-extents = Vector3( 1.1, 1.1, 1.1 )
+extents = Vector3( 0.7, 0.7, 1.1 )
 
 [sub_resource type="Image" id=11]
 data = {
@@ -93,12 +93,36 @@ axis_lock_angular_y = true
 transform = Transform( 0.55, -0.866025, 0, 0.952628, 0.5, 0, 0, 0, 0.1, 0, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="Area" type="Area" parent="Diagonal"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9 )
+[node name="AreaTopLeft" type="Area" parent="Diagonal"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, -0.9 )
 collision_layer = 16
 collision_mask = 32
 
-[node name="CollisionShape" type="CollisionShape" parent="Diagonal/Area"]
+[node name="CollisionShape" type="CollisionShape" parent="Diagonal/AreaTopLeft"]
+shape = SubResource( 4 )
+
+[node name="AreaBottomLeft" type="Area" parent="Diagonal"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, -0.9 )
+collision_layer = 16
+collision_mask = 32
+
+[node name="CollisionShape" type="CollisionShape" parent="Diagonal/AreaBottomLeft"]
+shape = SubResource( 4 )
+
+[node name="AreaTopRight" type="Area" parent="Diagonal"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -0.9 )
+collision_layer = 16
+collision_mask = 32
+
+[node name="CollisionShape" type="CollisionShape" parent="Diagonal/AreaTopRight"]
+shape = SubResource( 4 )
+
+[node name="AreaBottomRight" type="Area" parent="Diagonal"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, -0.9 )
+collision_layer = 16
+collision_mask = 32
+
+[node name="CollisionShape" type="CollisionShape" parent="Diagonal/AreaBottomRight"]
 shape = SubResource( 4 )
 
 [node name="Bottom" type="RigidBody" parent="."]
