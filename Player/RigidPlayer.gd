@@ -10,4 +10,7 @@ func _process(delta):
 		
 func hurt():
 	get_node("PlayerBall").get_node("CPUParticles").emitting = true
-	$AudioStreamPlayer.play()
+	$HurtAudioStreamPlayer.play()
+	
+func charging():
+	pass

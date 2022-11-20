@@ -38,13 +38,14 @@ func jump(delta):
 		jump_charge = clamp(jump_charge, 0, 1)
 	elif Input.is_action_just_released("jump"):
 		if can_jump:
-			apply_central_impulse(Vector3.UP * jump_charge * MAX_JUMP_IMPULSE)
+			apply_central_impulse(direction * jump_charge * MAX_JUMP_IMPULSE)
 		is_charging = false
 		jump_charge = 0
 	
 func get_direction():
-	var direction = Vector2.ZERO
+	var direction = Vector3.ZERO
 	direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	direction.y = Input.get_action_strength("move_up") - Input.get_action_strength("move_down")
 	return direction
 	
 func roll(delta):
